@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>se.lexicon</groupId>
-    <artifactId>library-app</artifactId>
+    <artifactId>workshop-library</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>library-app</name>
-    <description>library-app</description>
+    <name>workshop-library</name>
+    <description>workshop-library</description>
     <url/>
     <licenses>
         <license/>
@@ -39,12 +39,6 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <scope>runtime</scope>
-            <optional>true</optional>
-        </dependency>
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
