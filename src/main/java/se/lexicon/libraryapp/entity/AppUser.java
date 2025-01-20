@@ -13,10 +13,13 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 
+@Entity
 public class AppUser {
 
 
-    @Setter(AccessLevel.NONE)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Setter(AccessLevel.PROTECTED)
     private int id;
 
     @NonNull
@@ -26,7 +29,8 @@ public class AppUser {
 
     private LocalDate regDate;
 
-    @NonNull
+    // @NonNull
+    @OneToOne
     private Details details;
 
 
