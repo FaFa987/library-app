@@ -31,7 +31,7 @@ public class AppUser {
 
     // @NonNull
     @OneToOne
-    private Details details;
+    private Details userDetails;
 
 
 }
