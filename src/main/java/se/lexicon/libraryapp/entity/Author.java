@@ -3,7 +3,6 @@ package se.lexicon.libraryapp.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.HashSet;
 import java.util.Set;
 
 @Getter
@@ -27,4 +26,10 @@ public class Author {
 
     @ManyToMany
     private Set<Book> writtenBooks;
+
+    public Author(int id, String firstName, String lastName) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
 }

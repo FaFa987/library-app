@@ -30,4 +30,10 @@ public class Book {
     @JoinColumn(name = "author_id")
     private Author author;
 
+    public Book(int id, String title, int maxLoanDays, String isbn) {
+        this.id = id;
+        this.title = title;
+        this.maxLoanDays = maxLoanDays;
+        this.isbn = isbn;
+    }
 }
