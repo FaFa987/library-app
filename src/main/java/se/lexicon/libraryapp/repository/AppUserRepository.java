@@ -10,6 +10,7 @@ import java.util.Optional;
 
 public interface AppUserRepository extends CrudRepository<AppUser, Long> {
 
+
     Optional<AppUser> findByUsername(String username);
 
     List<AppUser> findByRegistrationDateBetween(LocalDate startDate, LocalDate endDate);
