@@ -26,7 +26,7 @@ public class Book {
     @NonNull
     private int maxLoanDays;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "author_id")
     private Author author;
 
@@ -35,5 +35,23 @@ public class Book {
         this.title = title;
         this.maxLoanDays = maxLoanDays;
         this.isbn = isbn;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    private boolean available = true;
+
+    public boolean isAvailable() {
+        return available;
+    }
+
+    public void setAvailable(boolean available) {
+        this.available = available;
     }
 }
