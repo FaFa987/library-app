@@ -8,8 +8,6 @@ import lombok.*;
 
 import java.time.LocalDate;
 
-@Getter
-@Setter
 @EqualsAndHashCode
 @ToString
 @AllArgsConstructor
@@ -31,4 +29,41 @@ public class Details {
     @NonNull
     private LocalDate birthDate;
 
+    public Details(int id, @NonNull String email, @NonNull String name) {
+        this.id = id;
+        this.email = email;
+        this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public @NonNull String getEmail() {
+        return email;
+    }
+
+    public void setEmail(@NonNull String email) {
+        this.email = email;
+    }
+
+    public @NonNull String getName() {
+        return name;
+    }
+
+    public void setName(@NonNull String name) {
+        this.name = name;
+    }
+
+    public @NonNull LocalDate getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(@NonNull LocalDate birthDate) {
+        this.birthDate = birthDate;
+    }
 }

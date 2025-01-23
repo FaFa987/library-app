@@ -5,8 +5,6 @@ import lombok.*;
 
 import java.time.LocalDate;
 
-@Getter
-@Setter
 @EqualsAndHashCode
 @ToString
 @AllArgsConstructor
@@ -42,12 +40,13 @@ public class BookLoan {
     private Author author;
 
 
-    @PreUpdate
+
+    /*@PreUpdate
     public void calculateDueDate() {
         if (book != null && loanDate != null) {
             this.dueDate = loanDate.plusDays(book.getMaxLoanDays());
         }
-    }
+    }*/
 
     @PrePersist
     public void checkAndSetBookAvailability() {
@@ -65,5 +64,62 @@ public class BookLoan {
         if (book != null) {
             book.setAvailable(true);
         }
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public @NonNull LocalDate getLoanDate() {
+        return loanDate;
+    }
+
+    public void setLoanDate(@NonNull LocalDate loanDate) {
+        this.loanDate = loanDate;
+    }
+
+    public @NonNull LocalDate getDueDate() {
+        return dueDate;
+    }
+
+    public void setDueDate(@NonNull LocalDate dueDate) {
+        this.dueDate = dueDate;
+    }
+
+    @NonNull
+    public boolean isReturned() {
+        return returned;
+    }
+
+    public void setReturned(@NonNull boolean returned) {
+        this.returned = returned;
+    }
+
+    public Book getBook() {
+        return book;
+    }
+
+    public void setBook(Book book) {
+        this.book = book;
+    }
+
+    public AppUser getBorrower() {
+        return borrower;
+    }
+
+    public void setBorrower(AppUser borrower) {
+        this.borrower = borrower;
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
     }
 }

@@ -8,8 +8,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-@Getter
-@Setter
+
 @EqualsAndHashCode
 @ToString
 @AllArgsConstructor
@@ -31,6 +30,54 @@ public class AppUser {
 
     private LocalDate regDate;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public @NonNull String getUsername() {
+        return username;
+    }
+
+    public void setUsername(@NonNull String username) {
+        this.username = username;
+    }
+
+    public @NonNull String getPassword() {
+        return password;
+    }
+
+    public void setPassword(@NonNull String password) {
+        this.password = password;
+    }
+
+    public LocalDate getRegDate() {
+        return regDate;
+    }
+
+    public void setRegDate(LocalDate regDate) {
+        this.regDate = regDate;
+    }
+
+    public Details getUserDetails() {
+        return userDetails;
+    }
+
+    public void setUserDetails(Details userDetails) {
+        this.userDetails = userDetails;
+    }
+
+    public List<BookLoan> getBookLoans() {
+        return bookLoans;
+    }
+
+    public void setBookLoans(List<BookLoan> bookLoans) {
+        this.bookLoans = bookLoans;
+    }
+
     // @NonNull
     @OneToOne
     private Details userDetails;
@@ -47,6 +94,5 @@ public class AppUser {
         bookLoans.remove(bookLoan);
         bookLoan.setBorrower(null);
     }
-
 
 }

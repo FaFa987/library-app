@@ -17,7 +17,7 @@ class AuthorRepositoryTest {
     private AuthorRepository authorRepository;
     private BookRepository bookRepository;
 
-    @Test
+   @Test
     void testFindByFirstName() {
         Author author = new Author(1, "Alex", "Hook");
         author.setFirstName("John");
@@ -66,4 +66,5 @@ class AuthorRepositoryTest {
         assertTrue(foundAuthor.isPresent());
         assertEquals("Mark", foundAuthor.get().getFirstName());
     }
+
 }

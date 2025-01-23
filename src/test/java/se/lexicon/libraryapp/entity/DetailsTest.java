@@ -21,7 +21,7 @@ class DetailsTest {
     @BeforeEach
     void setUp() {
 
-        testObject = new Details(id, email, name, birthDate);
+        testObject = new Details(id, email, name);
     }
 
     @Test
